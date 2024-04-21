@@ -8,8 +8,6 @@ def parse_arg():
     parser.add_argument('--key', type=str, help='openai API key')
     args = parser.parse_args()
     apikey = args.key
-    if apikey is None:
-        apikey = "sk-proj-J6g3zLosAFj2D7k7a3KQT3BlbkFJts7j4qbd65MsyFEiUc0J"
     return apikey
 
 def extract_code(completion):
@@ -98,14 +96,20 @@ def evaluate(prompt_list,type):
             file.write(code)
             file.write("\n")
         
-        result = pylint(optimized_file_path,disable_error_list)
-        score = evaluate_score(result)
+        if score < 10.0:
+            result = pylint(optimized_file_path,disable_error_list)
+            score = evaluate_score(result)
+            
         optimized_score_list.append(score)
     raw_average_score = sum(raw_score_list) / len(raw_score_list)
     optimized_average_score = sum(optimized_score_list) / len(optimized_score_list)
     return raw_average_score,optimized_average_score
 
 raw_avg_score, opt_avg_score = evaluate(s_prompt,"s")
+print("raw completion scroe:")
 print(raw_avg_score)
 print(opt_avg_score)
-# evaluate(c_prompt,"c")
+raw_avg_score, opt_avg_score = evaluate(c_prompt,"c")
+print("optimized completion score")
+print(raw_avg_score)
+print(opt_avg_score)

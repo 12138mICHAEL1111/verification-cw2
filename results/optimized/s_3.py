@@ -1,6 +1,5 @@
-my_array = ['apple', 'banana', 'cherry']
-for index, value in enumerate(my_array):
-    print(index, value)
+items = ["apple", "banana", "cherry"]
 
-# --------------------------------------------------------------------
-# Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+for index, item in enumerate(items):
+    print(index, item)
+
