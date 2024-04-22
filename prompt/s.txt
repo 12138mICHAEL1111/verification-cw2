@@ -1,5 +1,5 @@
-reverse a string in python
-use python to create a txt file, and write text into it
-how to get the timestamp of 2 days that before current time in python 
-how to use enumurate to iterate an array in python
-how to use pandas to read a tsv file in python, suppose I have already installed pandas
+Reverse a string in python
+Use python to create a txt file, and write text into it
+How to get the timestamp of 2 days that before current time in python 
+How to use enumerate to iterate an array in python
+How to use pandas to read a tsv file in python, suppose I have already installed pandas

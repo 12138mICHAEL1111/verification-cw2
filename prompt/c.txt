@@ -1,5 +1,5 @@
 Design an LRU using python
 Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays using python. The overall run time complexity should be O(log(m+n))
 Don't use sklearn, use python to implement a logistic regression manually
-Suppose I have a dict which structure is like [{"name":"a",dependent:[{"name":"b","name":"c"}]},{"name":"c","dependent":[]}],use python to check is there a dependence cycle in the dict
+Suppose I have a dict which structure is like [{"name":"a",dependence:[{"name":"b","name":"c"}]},{"name":"c","dependence":[]}],use python to check is there a dependence cycle in the dict
 Given the head of a linked list, use python to reverse the nodes of the list k at a time, and return the modified list
