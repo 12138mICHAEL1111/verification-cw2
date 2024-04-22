@@ -12,7 +12,8 @@ def parse_arg():
 
 def extract_code(completion):
     pattern = r'```([a-zA-Z]+)\n(.*?)```'
-    match = re.search(pattern, completion, re.DOTALL) 
+    match = re.search(pattern, completion, re.DOTALL)
+    code = None 
     if match:
         code = match.group(2)
     return code
@@ -74,8 +75,11 @@ def evaluate(prompt_list,type):
         )
         first_completion_result = completion.choices[0].message.content
         code = extract_code(first_completion_result)
+        if code == None:
+            continue
+        
         history.append({"role":"assistant","content":code})
-
+        
         raw_file_path = f"results/raw/{type}_{index}.py"
         with open(raw_file_path, 'w') as file:
             file.write(code)
