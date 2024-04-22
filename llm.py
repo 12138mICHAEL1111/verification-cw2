@@ -84,7 +84,7 @@ def evaluate(prompt_list,type):
         result = pylint(raw_file_path,disable_error_list)
         score = evaluate_score(result)
         raw_score_list.append(score)
-        history.append({"role": "user", "content": f"I use pylint to check the above code, and found the following issues:{result}, re-gernerate code by fixing above issues and directly return the code to me"})
+        history.append({"role": "user", "content": f"I use pylint to check the above code, and found the following issues:{result}, re-generate code by fixing above issues and directly return the code to me"})
         completion = client.chat.completions.create(
             model="gpt-4-turbo",
             messages=history
